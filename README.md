@@ -1,3 +1,9 @@
+# NOTE
+
+Forking this due to the limitation around lifecycle rules, a known and old issue.
+When setting up CRR in S3 you need to (according to terraform docs) ignore changes to replication configuration.  This is not possible in the module as-is.
+Probably why there are 1.5k forks on this repo.
+
 # AWS S3 bucket Terraform module
 
 Terraform module which creates S3 bucket on AWS with all (or almost all) features provided by Terraform AWS provider.
