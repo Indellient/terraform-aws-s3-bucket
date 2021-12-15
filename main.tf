@@ -119,9 +119,6 @@ resource "aws_s3_bucket" "this" {
         }
       }
     }
-    ignore_changes = [
-      replication_configuration
-    ]
   }
 
   # Max 1 block - replication_configuration
@@ -262,6 +259,10 @@ resource "aws_s3_bucket" "this" {
       }
     }
   }
+
+    ignore_changes = [
+      replication_configuration
+    ]
 
 }
 
