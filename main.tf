@@ -259,11 +259,11 @@ resource "aws_s3_bucket" "this" {
       }
     }
   }
-
+  lifecycle_rule {
     ignore_changes = [
       replication_configuration
     ]
-
+  }
 }
 
 resource "aws_s3_bucket_policy" "this" {
