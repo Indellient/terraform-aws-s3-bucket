@@ -16,6 +16,12 @@ resource "aws_s3_bucket" "this" {
   acceleration_status = var.acceleration_status
   request_payer       = var.request_payer
 
+lifecycle {
+  ignore_changes = [
+    replication_configuration, lifecycle_rule
+  ]
+}
+
   dynamic "website" {
     for_each = length(keys(var.website)) == 0 ? [] : [var.website]
 
@@ -259,7 +265,6 @@ resource "aws_s3_bucket" "this" {
       }
     }
   }
-
 }
 
 resource "aws_s3_bucket_policy" "this" {
